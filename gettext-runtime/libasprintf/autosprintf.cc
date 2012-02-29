@@ -21,7 +21,9 @@
    This must come before <config.h> because <config.h> may include
    <features.h>, and once <features.h> has been included, it's too late.  */
 #ifndef _GNU_SOURCE
+#ifndef _WIN32
 # define _GNU_SOURCE    1
+#endif
 #endif
 
 /* Specification.  */
