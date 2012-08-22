@@ -1,7 +1,7 @@
 <HTML>
 <HEAD>
 <!-- This HTML file has been created by texi2html 1.52b
-     from gettext.texi on 6 June 2010 -->
+     from gettext.texi on 22 August 2012 -->
 
 <META HTTP-EQUIV="content-type" CONTENT="text/html; charset=UTF-8">
 <TITLE>GNU gettext utilities - 13  The Maintainer's View</TITLE>
@@ -748,12 +748,12 @@ encoding and therefore needs to identify the platform.
 </P>
 <P>
 You can obtain the newest version of <TT>&lsquo;config.guess&rsquo;</TT> and
-<TT>&lsquo;config.sub&rsquo;</TT> from the CVS of the <SAMP>&lsquo;config&rsquo;</SAMP> project at
+<TT>&lsquo;config.sub&rsquo;</TT> from the <SAMP>&lsquo;config&rsquo;</SAMP> project at
 <TT>&lsquo;http://savannah.gnu.org/&rsquo;</TT>. The commands to fetch them are
 
 <PRE>
-$ wget 'http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/config/config/config.guess'
-$ wget 'http://savannah.gnu.org/cgi-bin/viewcvs/*checkout*/config/config/config.sub'
+$ wget -O config.guess 'http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.guess;hb=HEAD'
+$ wget -O config.sub 'http://git.savannah.gnu.org/gitweb/?p=config.git;a=blob_plain;f=config.sub;hb=HEAD'
 </PRE>
 
 <P>
@@ -843,6 +843,22 @@ ACLOCAL_AMFLAGS = -I m4
 
 <P>
 to your top level <TT>&lsquo;Makefile.am&rsquo;</TT>.
+
+</P>
+<P>
+If you are using GNU <CODE>automake</CODE> 1.10 or newer, it is even easier:
+Add the line
+
+</P>
+
+<PRE>
+ACLOCAL_AMFLAGS = --install -I m4
+</PRE>
+
+<P>
+to your top level <TT>&lsquo;Makefile.am&rsquo;</TT>, and run <SAMP>&lsquo;aclocal --install -I m4&rsquo;</SAMP>.
+This will copy the needed files to the <TT>&lsquo;m4/&rsquo;</TT> subdirectory automatically,
+before updating <TT>&lsquo;aclocal.m4&rsquo;</TT>.
 
 </P>
 <P>

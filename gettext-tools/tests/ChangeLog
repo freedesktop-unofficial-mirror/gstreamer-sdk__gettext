@@ -1,3 +1,32 @@
+2011-06-02  Bruno Haible  <bruno@clisp.org>
+
+	* xgettext-python-1: Update expected result after linebreaking in
+	libunistring changed on 2011-01-09.
+
+2010-11-20  Bruno Haible  <bruno@clisp.org>
+
+	Port to uClibc.
+	* gettext-6-prg.c: Treat uClibc like a non-glibc platform.
+	* gettext-7-prg.c: Likewise.
+	* format-c-5-prg.c: Likewise.
+
+2010-08-31  Bruno Haible  <bruno@clisp.org>
+
+	Avoid test leftovers on MacOS X 10.5.
+	* lang-objc: Add hello.dSYM to tmpfiles.
+
+2010-06-06  Bruno Haible  <bruno@clisp.org>
+
+	Test the libgettextpo library and its functions.
+	* gettextpo-1: New file.
+	* gettextpo-1-prg.c: New file.
+	* gettextpo-1.de.po: New file.
+	* Makefile.am (TESTS): Add gettextpo-1.
+	(EXTRA_DIST): Add gettextpo-1.de.po.
+	(noinst_PROGRAMS): Add gettextpo-1-prg.
+	(gettextpo_1_prg_SOURCES, gettextpo_1_prg_CPPFLAGS,
+	gettextpo_1_prg_LDADD): New variables.
+
 2010-06-04  Bruno Haible  <bruno@clisp.org>
 
 	* gettext-0.18.1 released.

@@ -1,6 +1,1 @@
-#include <config.h>
-
-/* Specification.  */
-#include "test-moo-aroot.h"
-
-#pragma implementation
+../../gnulib-local/tests/test-moo-aroot.oo.c

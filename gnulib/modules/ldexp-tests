@@ -1,0 +1,20 @@
+Files:
+tests/test-ldexp.c
+tests/test-ldexp.h
+tests/minus-zero.h
+tests/infinity.h
+tests/nan.h
+tests/signature.h
+tests/macros.h
+
+Depends-on:
+isnand-nolibm
+signbit
+float
+
+configure.ac:
+
+Makefile.am:
+TESTS += test-ldexp
+check_PROGRAMS += test-ldexp
+test_ldexp_LDADD = $(LDADD) @LDEXP_LIBM@

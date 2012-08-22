@@ -2,20 +2,18 @@
 
    Copyright (C) 2000-2006, 2008-2010 Free Software Foundation, Inc.
 
-   This program is free software; you can redistribute it and/or modify it
-   under the terms of the GNU Library General Public License as published
-   by the Free Software Foundation; either version 2, or (at your option)
-   any later version.
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Lesser General Public License as published by
+   the Free Software Foundation; either version 2.1 of the License, or
+   (at your option) any later version.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   Library General Public License for more details.
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Lesser General Public License for more details.
 
-   You should have received a copy of the GNU Library General Public
-   License along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,
-   USA.  */
+   You should have received a copy of the GNU Lesser General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 /* Written by Bruno Haible <bruno@clisp.org>.  */
 
@@ -229,8 +227,7 @@ get_charset_aliases (void)
                         {
                           /* Out of memory. */
                           res_size = 0;
-                          if (old_res_ptr != NULL)
-                            free (old_res_ptr);
+                          free (old_res_ptr);
                           break;
                         }
                       strcpy (res_ptr + res_size - (l2 + 1) - (l1 + 1), buf1);
@@ -409,10 +406,10 @@ locale_charset (void)
             }
         }
 
-      /* Woe32 has a function returning the locale's codepage as a number:
-         GetACP().  This encoding is used by Cygwin, unless the user has set
-         the environment variable CYGWIN=codepage:oem (which very few people
-         do).
+      /* The Windows API has a function returning the locale's codepage as a
+         number: GetACP().  This encoding is used by Cygwin, unless the user
+         has set the environment variable CYGWIN=codepage:oem (which very few
+         people do).
          Output directed to console windows needs to be converted (to
          GetOEMCP() if the console is using a raster font, or to
          GetConsoleOutputCP() if it is using a TrueType font).  Cygwin does
@@ -459,8 +456,8 @@ locale_charset (void)
 
   static char buf[2 + 10 + 1];
 
-  /* Woe32 has a function returning the locale's codepage as a number:
-     GetACP().
+  /* The Windows API has a function returning the locale's codepage as a
+     number: GetACP().
      When the output goes to a console window, it needs to be provided in
      GetOEMCP() encoding if the console is using a raster font, or in
      GetConsoleOutputCP() encoding if it is using a TrueType font.

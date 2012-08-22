@@ -1,5 +1,5 @@
 /* Creating and controlling threads.
-   Copyright (C) 2005-2010 Free Software Foundation, Inc.
+   Copyright (C) 2005-2012 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -29,7 +29,21 @@
 
 /* ========================================================================= */
 
-#if USE_WIN32_THREADS
+#if USE_POSIX_THREADS
+
+#include <pthread.h>
+
+#ifdef PTW32_VERSION
+
+const gl_thread_t gl_null_thread /* = { .p = NULL } */;
+
+#endif
+
+#endif
+
+/* ========================================================================= */
+
+#if USE_WINDOWS_THREADS
 
 #include <process.h>
 

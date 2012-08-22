@@ -1,5 +1,4 @@
-/* Copyright (C) 1991, 1992, 1993, 1996, 1997, 1998, 1999, 2000, 2001, 2002,
-   2003, 2004, 2005, 2006, 2007, 2009, 2010 Free Software Foundation, Inc.
+/* Copyright (C) 1991-1993, 1996-2007, 2009-2012 Free Software Foundation, Inc.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
@@ -169,7 +168,6 @@ static int posixly_correct;
 #  endif
 # endif
 # define MEMCHR(S, C, N) memchr (S, C, N)
-# define STRCOLL(S1, S2) strcoll (S1, S2)
 # include "fnmatch_loop.c"
 
 
@@ -197,7 +195,6 @@ static int posixly_correct;
 #   endif
 #  endif
 #  define MEMCHR(S, C, N) wmemchr (S, C, N)
-#  define STRCOLL(S1, S2) wcscoll (S1, S2)
 #  define WIDE_CHAR_VERSION 1
 
 #  undef IS_CHAR_CLASS

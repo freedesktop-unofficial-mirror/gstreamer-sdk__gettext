@@ -3,7 +3,6 @@
 # Generate this list with
 # find . -type f -name '*.m4' -printf '%f\n' | sort | tr '\012' @ | sed 's/@$/%/;s/@/ \\@/g' | tr @% '\012\012'
 EXTRA_DIST = README \
-ansi-c++.m4 \
 codeset.m4 \
 fcntl-o.m4 \
 gettext.m4 \
@@ -15,6 +14,7 @@ intl.m4 \
 intldir.m4 \
 intlmacosx.m4 \
 intmax.m4 \
+intmax_t.m4 \
 inttypes-pri.m4 \
 inttypes_h.m4 \
 lcmessage.m4 \
