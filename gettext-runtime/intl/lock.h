@@ -89,6 +89,13 @@
 
 # include <pthread.h>
 
+#ifdef __APPLE__
+#if MAC_OS_X_VERSION_MIN_REQUIRED <= MAC_OS_X_VERSION_10_6
+#undef PTHREAD_RECURSIVE_MUTEX_INITIALIZER
+#undef PTHREAD_ERRORCHECK_MUTEX_INITIALIZER
+#endif
+#endif
+
 # ifdef __cplusplus
 extern "C" {
 # endif
